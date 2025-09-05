@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @Data
 public class UrlMapping {
-
+//This is to store actual and generated urls. Also the clicks for each url are connected
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

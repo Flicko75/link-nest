@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @Table(name = "users")
 public class User {
-
+//Main user table holding the username and password that will help them login
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

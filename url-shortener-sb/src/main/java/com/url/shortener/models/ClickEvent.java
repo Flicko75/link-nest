@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 public class ClickEvent {
-
+//This is to store and update each click for a particular url generated
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
