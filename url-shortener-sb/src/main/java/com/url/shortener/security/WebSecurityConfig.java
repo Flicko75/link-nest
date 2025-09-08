@@ -5,7 +5,9 @@ import com.url.shortener.service.UserDetailsServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.authentication.configurers.userdetails.DaoAuthenticationConfigurer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -39,6 +41,11 @@ public class WebSecurityConfig {
     }
 
     @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+        return authenticationConfiguration.getAuthenticationManager();
+    }
+
+    @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         // DAO provider connects Spring Security with our DB using UserDetailsService
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -51,6 +58,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable) // Disable CSRF since JWT is stateless
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/auth/public/**").permitAll()
                         // Public endpoints (signup/login)
                         .requestMatchers("/api/auth/**").permitAll()
                         // Protected endpoints - require JWT authentication
