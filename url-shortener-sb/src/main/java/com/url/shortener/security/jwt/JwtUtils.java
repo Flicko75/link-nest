@@ -3,6 +3,7 @@ package com.url.shortener.security.jwt;
 import com.url.shortener.service.UserDetailsImpl;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.http.HttpServletRequest;
@@ -43,7 +44,7 @@ public class JwtUtils {
                 .claim("roles" , roles)
                 .issuedAt(new Date())
                 .expiration(new Date((new Date().getTime() + jwtExpirationMs)))
-                .signWith(key())
+                .signWith(key(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
