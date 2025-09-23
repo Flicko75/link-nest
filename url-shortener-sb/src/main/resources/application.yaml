@@ -28,3 +28,6 @@ logging:
   level:
     org.springframework.security: DEBUG
     org.springframework.web: DEBUG
+
+frontend:
+  url: http://localhost:5173
