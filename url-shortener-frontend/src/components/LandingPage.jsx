@@ -1,7 +1,11 @@
 import React from 'react'
 import Card from './Card'
+import { useStoreContext } from '../contextApi/ContextApi';
 
 const LandingPage = () => {
+    const { token } = useStoreContext();
+    console.log("Token from landing page: " +token);
+
     let desc =
         "LinkNest makes sharing easy — shorten long URLs instantly and share them seamlessly across any platform."
     return (
