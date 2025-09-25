@@ -24,12 +24,12 @@ const LandingPage = () => {
 
                     <div className="flex items-center gap-3">
                         <button
-                            className="bg-custom-gradient w-40 text-white rounded-md  py-2"
+                            className="bg-custom-gradient w-40 text-white rounded-md  py-2 cursor-pointer"
                         >
                             Manage Links
                         </button>
                         <button
-                            className="border-btnColor border w-40 text-btnColor rounded-md  py-2 "
+                            className="border-btnColor border w-40 text-btnColor rounded-md  py-2 cursor-pointer"
                         >
                             Create Short Link
                         </button>
