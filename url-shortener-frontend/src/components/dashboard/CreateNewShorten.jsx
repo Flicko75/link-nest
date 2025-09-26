@@ -43,6 +43,7 @@ const CreateNewShorten = ({setOpen, refetch}) => {
             });
           });
 
+          await refetch();
           reset();
           setOpen(false);
     } catch(error) {
@@ -89,6 +90,7 @@ const CreateNewShorten = ({setOpen, refetch}) => {
         {!loading && (
           <Tooltip title="Close">
             <button
+              type='button'
               disabled={loading}
               onClick={() => setOpen(false)}
               className=" absolute right-2 top-2 cursor-pointer"
