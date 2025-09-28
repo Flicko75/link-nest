@@ -1,9 +1,11 @@
 import React from 'react'
 import Card from './Card'
 import { useStoreContext } from '../contextApi/ContextApi';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
     const { token } = useStoreContext();
+    const navigate = useNavigate();
     console.log("Token from landing page: " +token);
 
     let desc =
@@ -23,12 +25,12 @@ const LandingPage = () => {
                     </p>
 
                     <div className="flex items-center gap-3">
-                        <button
+                        <button onClick={() => token ? navigate("/dashboard") : navigate("/login")}
                             className="bg-custom-gradient w-40 text-white rounded-md  py-2 cursor-pointer"
                         >
                             Manage Links
                         </button>
-                        <button
+                        <button onClick={() => token ? navigate("/dashboard") : navigate("/login")}
                             className="border-btnColor border w-40 text-btnColor rounded-md  py-2 cursor-pointer"
                         >
                             Create Short Link
