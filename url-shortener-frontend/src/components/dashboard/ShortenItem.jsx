@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { useStoreContext } from '../../contextApi/ContextApi';
 import { SyncLoader } from 'react-spinners';
 import Graph from './Graph';
+import toast from 'react-hot-toast';
 
 const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
     const navigate = useNavigate();
@@ -33,7 +34,7 @@ const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
             // reset after 2s
             setTimeout(() => setIsCopied(false), 2000);
         } catch (err) {
-            console.error('Failed to copy:', err);
+            toast.error('Failed to copy');
         }
     };
 
