@@ -48,7 +48,7 @@ const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
     const fetchMyShortUrl = async () => {
         setLoader(true);
         try {
-            const { data } = await api.get(`/api/url/analytics/${selectedUrl}?startDate=2025-01-01T00:00:00&endDate=2024-12-31T00:00:00`, {
+            const { data } = await api.get(`/api/url/analytics/${selectedUrl}?startDate=2025-01-01T00:00:00&endDate=2025-12-31T00:00:00`, {
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
