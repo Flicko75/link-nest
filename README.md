@@ -1,15 +1,15 @@
 
-# LinkNest
+# 🔗LinkNest
 
 A modern URL shortener with custom subdomain support, built using React & Spring Boot.
 
 
-## Demo
+## 🚀Demo
 
-[Live Demo](https://soft-rolypoly-af1af8.netlify.app/)
+👉[Live Demo](https://soft-rolypoly-af1af8.netlify.app/)
 
 
-## Features
+## ✨Features
 
 - Shorten long URLs into clean, shareable links.
 - Fast and responsive frontend (React + Tailwind).
@@ -18,7 +18,7 @@ A modern URL shortener with custom subdomain support, built using React & Spring
 - Deployed on Render + Netlify.
 
 
-## Tech Stack
+## 🛠Tech Stack
 
 **Backend:**  Spring Boot, Java, Docker
 
@@ -27,7 +27,7 @@ A modern URL shortener with custom subdomain support, built using React & Spring
 **Database:** MySQL(Locally), PostgreSQL(Production)
 
 
-## Quick Start
+## ⚡Quick Start
 
 Clone the repo
 
