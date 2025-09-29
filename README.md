@@ -6,7 +6,7 @@ A modern URL shortener with custom subdomain support, built using React & Spring
 
 ## Demo
 
-soft-rolypoly-af1af8.netlify.app/
+[Live Demo](soft-rolypoly-af1af8.netlify.app/)
 
 
 ## Features
